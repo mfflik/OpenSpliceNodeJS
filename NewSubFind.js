@@ -34,9 +34,6 @@ const participant = new dds.Participant(4);
 // Asynchronous function to initialize the DDS subscriber
 async function initial() {
   try {
-    // Create a participant (Note: This line creates another participant instance)
-    const participant = new dds.Participant();
-
     // Define the topic name, IDL file name, and its path
     const topicName = "Hello";
     const idlName = "HelloWorldData.idl";
