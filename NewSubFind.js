@@ -87,27 +87,6 @@ async function initial() {
 // Asynchronous function to subscribe to data
 async function subscribeData() {
   console.log('=== HelloWorldSubscriber start');
-  if (topicData) {
-    console.log('=== [Subscriber] Topic "Hello" found.');
-  } else {
-    // If topicData is not defined, create it with default QoS settings
-    const topicName = 'Hello';
-    const idlName = 'HelloWorldData.idl';
-    const idlPath = __dirname + path.sep + idlName;
-    const typeSupports = await dds.importIDL(idlPath);
-    const typeSupport = typeSupports.get('HelloWorldData::Msg');
-
-    const tqos = dds.QoS.topicDefault();
-    tqos.durability = { kind: dds.DurabilityKind.Transient };
-    tqos.reliability = { kind: dds.ReliabilityKind.Reliable };
-
-    topicData = participant.createTopic(
-      topicName,
-      typeSupport,
-      tqos
-    );
-  }
-
   try {
     // Configure the subscriber QoS settings
     const sqos = dds.QoS.subscriberDefault();
