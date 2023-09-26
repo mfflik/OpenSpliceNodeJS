@@ -1,8 +1,8 @@
 {
-  "name": "helloworld",
+  "name": "OpenSpliceNodeJS",
   "version": "1.0.0",
-  "description": "Hello World example",
-  "main": "HelloWorldPublisher.js",
+  "description": "OpenSpliceNodeJS Listen Topic",
+  "main": "NewPubFind.js",
   "author": "",
   "license": "ISC",
   "dependencies": {
